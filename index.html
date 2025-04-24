@@ -6,41 +6,61 @@
     <meta name="description" content="Meeting minutes for the team" />
     <meta name="author" content="Paz Mogrelia" />
     <link rel="icon" href="favicon.ico" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Internal CSS (demo only) -->
+    <style>
+      nav ul {
+        background-color: hsl(210, 50%, 90%);
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      nav a:hover {
+        color: crimson;
+      }
+    </style>
   </head>
+
   <body>
-    <header>
-      <h1>My Meeting Minutes</h1>
+    <header class="page-header">
+      <h1 style="color: rgb(44, 62, 80);" id="main-title">My Meeting Minutes</h1> <!-- ID + inline style -->
       <h3>Date: April 15, 2025</h3>
       <nav>
         <ul>
-          <li><a href="#attendance">Attendance</a></li>
-          <li><a href="#agenda">Agenda</a></li>
-          <li><a href="#unfinished">Unfinished Business</a></li>
-          <li><a href="#new">New Business</a></li>
-          <li><a href="#misc">Miscellaneous</a></li>
-          <li><a href="#feedback">Feedback</a></li>
+          <li><a href="#attendance" class="nav-link">Attendance</a></li>
+          <li><a href="#agenda" class="nav-link">Agenda</a></li>
+          <li><a href="#unfinished" class="nav-link">Unfinished Business</a></li>
+          <li><a href="#new" class="nav-link">New Business</a></li>
+          <li><a href="#misc" class="nav-link">Miscellaneous</a></li>
+          <li><a href="#feedback" class="nav-link">Feedback</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="attendance">
+      <section id="attendance" class="section-block">
         <h2>Attendance</h2>
         <ul>
-          <li>
-            <strong>Present:</strong> Paz Mogrelia, Max Verstappen, Lebron James
-          </li>
-          <li><em>Absent:</em> Wout Weghorst</li>
+          <li data-status="present"><strong>Present:</strong> Paz Mogrelia, Max Verstappen, Lebron James</li>
+          <li data-status="absent"><em>Absent:</em> Wout Weghorst</li>
         </ul>
       </section>
 
-      <section id="agenda">
+      <section id="agenda" class="section-block">
         <h2>Meeting Agenda</h2>
         <ol>
-          <li>Review World Cup Highlights</li>
-          <li>Discuss impact of ChatGPT to Lebron's Legacy</li>
-          <li>Copy Pep Guardiola's Tactics</li>
-          <li>Organize Minecraft Movie Watch Party</li>
+          <li class="agenda-item">Review World Cup Highlights</li>
+          <li class="agenda-item">Discuss impact of ChatGPT to Lebron's Legacy</li>
+          <li class="agenda-item">Copy Pep Guardiola's Tactics</li>
+          <li class="agenda-item">Organize Minecraft Movie Watch Party</li>
         </ol>
       </section>
 
@@ -48,59 +68,53 @@
 
       <section id="unfinished">
         <h2>Unfinished Business</h2>
-        <p>
-          The team <b>still needs to finalize</b> the engine supplier for the
-          project. Options discussed:
-        </p>
-        <ul>
-          <li>Brawn GP Engines</li>
-          <li>Renault Engines</li>
-        </ul>
+        <div class="discussion">
+          <p>The team <b>still needs to finalize</b> the engine supplier.</p>
+          <ul>
+            <li>Brawn GP Engines</li>
+            <li>Renault Engines</li>
+          </ul>
+        </div>
       </section>
 
       <section id="new">
         <h2>New Business</h2>
         <p>The team decided on the following features for the front wing:</p>
-        <div>
-          Core functionalities include:
-          <span><i>Redbull</i> gives you wings</span>,
-          <span>Chicken Wings</span>, and <span>I ran out of jokes</span>.
+        <div class="wing-options parent">
+          <span><i>Redbull</i> gives you wings</span>
+          <span class="note">Chicken Wings</span>
+          <span>I ran out of jokes</span>
         </div>
         <br />
-        <img src="buisness.png" alt="Very Important Critical Buisness Images To Save The World" width="900" height="500" />
+        <img class="main-image" src="buisness.png" alt="Very Important Critical Buisness Images To Save The World" width="900" height="500" />
       </section>
 
-      <section id="misc">
+      <section id="misc" class="section-block">
         <h2>Miscellaneous</h2>
         <details>
           <summary>Questions & Concerns</summary>
-          <p>
-            Team members expressed concern about spending too much time watching
-            Brainrot Reels.
-          </p>
+          <p class="warning">Concerns about Brainrot Reels time drain</p>
         </details>
 
         <h3>Meeting Recordings</h3>
         <audio controls>
           <source src="audiorecording.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
         </audio>
 
         <video width="320" height="240" controls>
           <source src="meeting.mp4" type="video/mp4" />
-          Your browser does not support the video element.
         </video>
       </section>
     </main>
 
     <footer>
       <p>
-        Minutes prepared by: Paz |
+        Minutes prepared by: <span class="footer-name">Paz</span> |
         <a href="mailto:pmogrelia@ucsd.edu">pmogrelia@ucsd.edu</a>
       </p>
     </footer>
 
-    <section id="feedback">
+    <section id="feedback" class="section-block form-section">
       <h2>Feedback Form</h2>
       <form>
         <fieldset>
@@ -108,33 +122,20 @@
 
           <label>
             Name:
-            <input type="text" name="name" /> </label
-          ><br /><br />
+            <input type="text" name="name" class="input-field" /> </label><br /><br />
 
           <label>
             Meeting Date:
-            <input type="date" name="meeting-date" /> </label
-          ><br /><br />
+            <input type="date" name="meeting-date" class="input-field" /> </label><br /><br />
 
           <p>Was the meeting productive?</p>
-          <label><input type="radio" name="productive" value="yes" /> Yes</label
-          ><br />
-          <label><input type="radio" name="productive" value="no" /> No</label
-          ><br /><br />
+          <label><input type="radio" name="productive" value="yes" /> Yes</label><br />
+          <label><input type="radio" name="productive" value="no" /> No</label><br /><br />
 
           <p>Topics discussed (check all that apply):</p>
-          <label
-            ><input type="checkbox" name="topics" value="design" />
-            Design</label
-          >
-          <label
-            ><input type="checkbox" name="topics" value="development" />
-            Development</label
-          >
-          <label
-            ><input type="checkbox" name="topics" value="testing" />
-            Testing</label
-          ><br /><br />
+          <label><input type="checkbox" name="topics" value="design" /> Design</label>
+          <label><input type="checkbox" name="topics" value="development" /> Development</label>
+          <label><input type="checkbox" name="topics" value="testing" /> Testing</label><br /><br />
 
           <label>
             Which browser do you use?
@@ -144,24 +145,21 @@
               <option value="Firefox"></option>
               <option value="Safari"></option>
               <option value="Edge"></option>
-            </datalist> </label
-          ><br /><br />
+            </datalist> </label><br /><br />
 
           <label>
             Team:
-            <select name="team">
+            <select name="team" class="input-field">
               <option value="frontend">Frontend</option>
               <option value="backend">Backend</option>
-              <option value="Other">Other</option>
-            </select> </label
-          ><br /><br />
+              <option value="other">Other</option>
+            </select> </label><br /><br />
 
           <label>
             Additional Comments:<br />
-            <textarea name="comments" rows="4" cols="50"></textarea></label
-          ><br /><br />
+            <textarea name="comments" rows="4" cols="50" class="input-field"></textarea></label><br /><br />
 
-          <button type="submit">Submit Feedback</button>
+          <button type="submit" class="submit-button">Submit Feedback</button>
         </fieldset>
       </form>
     </section>
