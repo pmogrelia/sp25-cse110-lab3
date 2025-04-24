@@ -1,0 +1,150 @@
+
+/* ===========================
+   General CSS Styling
+   =========================== */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --main-bg: color(display-p3 0.9 0.9 0.98);
+  --primary-color: #3498db;
+  --accent-color: orange;
+}
+
+body {
+  background-color: var(--main-bg, #f0f0ff);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color Examples */
+h1 { color: hsl(200, 70%, 40%); }
+h2 { color: #FF6347; } /* Hex */
+h3 { color: rgb(50, 150, 100); } /* RGB */
+nav a { color: orange; }
+.section-block {
+  background-color: color-mix(in srgb, white 80%, var(--accent-color));
+}
+
+img.main-image,
+video,
+audio {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Background */
+footer {
+  background-color: rgba(30, 30, 30, 0.8);
+  color: white;
+  padding: 10px;
+}
+
+/* Units */
+main {
+  margin: 5%;
+  padding: 2rem;
+  font-size: 1.2em;
+}
+img.main-image {
+  width: 500px;
+  height: 300px;
+  border: 3px solid black;
+  margin: 20px;
+}
+
+/* Box Model */
+.section-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin: 20px auto;
+}
+#feedback {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding: 10px 15px;
+}
+fieldset {
+  border-style: dashed;
+  border-color: #555;
+  border-width: 2px;
+  border-radius: 8px;
+}
+
+/* Text */
+p, li { color: #333; text-align: justify; }
+a { text-decoration: underline; }
+
+/* Display Types */
+.form-section form { display: block; }
+img.main-image { display: inline-block; }
+
+/* Sizing */
+.video, audio {
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+  height: auto;
+}
+
+/* Positioning */
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+nav { position: relative; }
+
+/* Pseudo-classes */
+button:hover {
+  background-color: #333;
+  color: white;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===========================
+   Layouts: Flexbox & Grid
+   =========================== */
+
+/* Flexbox Example */
+#agenda ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Grid Example */
+#feedback form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  justify-items: start;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  header, footer {
+    text-align: center;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
