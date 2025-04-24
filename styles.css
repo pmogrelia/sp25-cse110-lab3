@@ -24,9 +24,12 @@ h1 { color: hsl(200, 70%, 40%); }
 h2 { color: #FF6347; } /* Hex */
 h3 { color: rgb(50, 150, 100); } /* RGB */
 nav a { color: orange; }
+
 .section-block {
-  background-color: color-mix(in srgb, white 80%, var(--accent-color));
-}
+    background-color: blue; /* Fallback for older browsers and validators */
+    background-color: color-mix(in srgb, white 80%, var(--accent-color));
+  }
+  
 
 img.main-image,
 video,
